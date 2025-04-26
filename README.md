@@ -30,6 +30,8 @@ git push origin nombre-de-tu-rama
 Crea un Pull Request (PR)
 
 Ingresa a Repositorio en GitHub.
+
 Haz clic en #"Compare & pull request".
+
 Agrega una breve descripción de tus cambios y envía el PR para revisión.
 
