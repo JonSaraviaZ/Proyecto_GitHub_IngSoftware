@@ -72,6 +72,7 @@ npm run dev
 
 ## 📁 Estructura del Repositorio
 
+```bash
 /Proyecto_GitHub_IngSoftware
 ├── frontend/ # Interfaz de usuario (React)
 ├── backend/ # API REST y lógica del sistema (Node + Express)
@@ -79,5 +80,5 @@ npm run dev
 ├── .gitignore
 ├── README.md
 └── LICENSE (opcional)
-
+```
 
