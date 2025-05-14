@@ -74,9 +74,29 @@ npm run dev
 
 ```bash
 /Proyecto_GitHub_IngSoftware
-├── frontend/ # Interfaz de usuario (React)
-├── backend/ # API REST y lógica del sistema (Node + Express)
-├── database/ # Scripts SQL para creación y carga de datos
+│
+├── /frontend                 # V (Vista) - Interfaz de usuario en React
+│   ├── /public
+│   ├── /src
+│   │   ├── /components       # Componentes reutilizables
+│   │   ├── /pages            # Páginas según rutas
+│   │   ├── /services         # Servicios de conexión con la API
+│   │   └── App.jsx
+│   └── package.json
+│
+├── /backend                  # M + C (Modelo + Controlador) - API y lógica
+│   ├── /controllers          # Lógica del negocio (Controladores)
+│   ├── /models               # Representación de datos (Modelos)
+│   ├── /routes               # Rutas API agrupadas
+│   ├── /config               # Conexión a la base de datos, dotenv
+│   ├── /middleware           # Validaciones, autenticación, etc.
+│   ├── server.js             # Punto de entrada principal
+│   └── package.json
+│
+├── /database                 # Scripts y documentación de la base de datos
+│   ├── schema.sql            # Script de creación de tablas
+│   └── seed.sql              # Datos de prueba opcionales
+│
 ├── .gitignore
 ├── README.md
 └── LICENSE (opcional)
