@@ -14,16 +14,12 @@ const LoginPage = ({ setToken }) => {
       const response = await axios.post('http://localhost:5000/api/login', { email, password });
       setToken(response.data.token);
     } catch (error) {
-      alert('Error en login');
+      alert('Error en login ');
     }
   };
 
   return (
-<<<<<<< HEAD
-    <div className={styles.bodyWrapper}> {/* Puedes usar esta clase si quieres aplicar estilos de body */}
-=======
       <div className={styles.formContainer}> 
->>>>>>> develop_jsaravia
         <form onSubmit={handleSubmit} className={styles.containerGeneral}>
             <div className={styles.containerHijo}>
                 <img className={styles.logo} src="/images/logo.png" alt="Logo del sitio"/>
@@ -50,13 +46,9 @@ const LoginPage = ({ setToken }) => {
                 </div>
             </div>
         </form>
-<<<<<<< HEAD
-  </div>
-=======
       </div>
         
     
->>>>>>> develop_jsaravia
   );
 };
 
