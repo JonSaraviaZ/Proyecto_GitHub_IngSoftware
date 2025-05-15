@@ -1,4 +1,16 @@
 :root {
+  /* Colores */
+  --azul-biblioteca: #2A4D8F;
+  --fondo-general: #F8F9FA;
+  --fondo-secundarios: #E1E5EB;
+  --h1:#212529;
+  --h2:#6C757D;
+  --verde-academico: #5DA271;
+  --enfasos-en-botones: #F6A623;
+  --bordes-1:#DADDE1;
+  --bordes-2: #3A3D42;
+  --fondo-header:#D9D9D9;
+  --fondo-titulo-body:#A8B29F;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -25,6 +37,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  background-color: var(--azul-biblioteca);
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
