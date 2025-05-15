@@ -36,12 +36,12 @@ const LoginPage = ({ setToken }) => {
                 <h2>No tienes cuenta</h2>
                 <h2>Regístrate acá</h2>
                 <div className={styles.containerLogin}>
-                    <button className={styles.buttonCrearCuenta} type="submit">Crear cuente</button>
+                    <button className={styles.buttonCrearCuenta} type="submit">Crear cuenta</button>
                 </div>
             </div>
             <hr className={styles.separator} />
             <div className={styles.containerHijo}>
-                <h2>No tienes cuenta</h2>
+                <h2>Ingresar como invitado</h2>
                 <div className={styles.containerLogin}>
                     <button className={styles.buttonIngresarInvitado} type="submit">Ingresar como invitado</button>
                 </div>

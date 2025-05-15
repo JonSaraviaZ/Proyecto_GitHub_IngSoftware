@@ -35,10 +35,11 @@
   }
   
 
-.bodyWrapper{
+.formContainer{
+    display: flex;
     background-color: var(--azul-biblioteca);
     width: 100vw;
-    height: 100vh;
+    height: 40vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -47,13 +48,11 @@
 
 .containerGeneral{
     display: flex;
-    padding: 100px 250px;
+    padding: 40px 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    flex: 1 0 0;
-    align-self: stretch;
     border-radius: 20px;
     border: 1px solid var(--bordes-1);
     background: var(--fondo-secundarios);
@@ -66,11 +65,17 @@
     flex-direction: column;
 }
 
+.separator {
+    border-top: 1px solid var(--h1);
+    width: 70%;
+  }
+
 h1 {
     font-family: var(--fuente-base);
     font-size: var(--h1-size);
     font-weight: var(--semi-bold);
     color: var(--h1);
+    text-align: center;
   }
   
   h2 {
@@ -96,7 +101,7 @@ h1 {
 }
 
 input{
-    width: 100%;
+    width: 356px;
     max-width: 600px;
     padding: 12px 16px;
     border: 2px solid var(--bordes-1);
@@ -106,6 +111,7 @@ input{
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s ease;
+    text-align: center;
   }
 
 button{
@@ -118,4 +124,102 @@ button{
     border-radius: 20px;
     border: 1px solid var(--bordes-2);
     background: var(--enfasos-en-botones, rgba(246, 166, 35, 0.60));
+}
+
+.buttonIniciarSesion{
+    background: var(--enfasos-en-botones, rgba(246, 166, 35, 0.60));
+    color: var(--h1);
+}
+
+.buttonCrearCuenta,
+.buttonIngresarInvitado{
+    width: 356px;
+    border: 1px solid var(--bordes-2);
+    background-color: var(--bordes-1);
+    color: var(--h1);
+}
+
+/* Responsividad */
+
+/* Tablet de hasta 768px*/
+
+@media (min-width: 426px) and (max-width: 768px){
+
+    .containerGeneral{
+        width: 60vw;
+    }
+}
+
+/* Móvil de hasta 768px*/
+
+@media (min-width: 376px) and (max-width: 425px){
+
+    .containerGeneral{
+        height: 80vh;
+        width: 75vw;
+        gap: 10px;
+    }
+
+    .containerLogin{
+        width: 300px;
+    }
+
+    h1{
+        font-family: var(--h3-size);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    input{
+        width: 260px;
+        padding: 10px 20px;
+    }
+
+    .buttonIniciarSesion,
+    .buttonCrearCuenta,
+    .buttonIngresarInvitado{
+        width: 260px;
+        padding: 10px 20px;
+    }
+
+
+}
+
+/* Móvil de hasta 375px*/
+
+
+@media (min-width: 0px) and (max-width: 375px){
+
+    .containerGeneral{
+        height: 80vh;
+        width: 75vw;
+        padding: 30px;
+        gap: 10px;
+    }
+
+    .containerLogin{
+        width: 300px;
+    }
+
+    .containerLogin, h1{
+        font-size: 0.5em;
+        line-height: 1.1;
+    }
+
+    input{
+        width: 260px;
+        padding: 10px 0px;
+    }
+
+    .buttonIniciarSesion,
+    .buttonCrearCuenta,
+    .buttonIngresarInvitado{
+        width: 240px;
+        padding: 10px 10px;
+        font-size: 12px;
+    }
+
+
 }
