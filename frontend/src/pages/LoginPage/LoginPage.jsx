@@ -19,7 +19,7 @@ const LoginPage = ({ setToken }) => {
   };
 
   return (
-    <body >
+    <div className={styles.bodyWrapper}> {/* Puedes usar esta clase si quieres aplicar estilos de body */}
         <form onSubmit={handleSubmit} className={styles.containerGeneral}>
             <div className={styles.containerHijo}>
                 <img className={styles.logo} src="/images/logo.png" alt="Logo del sitio"/>
@@ -44,7 +44,7 @@ const LoginPage = ({ setToken }) => {
                 </div>
             </div>
         </form>
-    </body>
+  </div>
   );
 };
 
