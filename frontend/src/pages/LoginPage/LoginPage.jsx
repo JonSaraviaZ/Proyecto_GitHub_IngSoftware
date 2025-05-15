@@ -15,6 +15,7 @@ const LoginPage = ({ setToken }) => {
       setToken(response.data.token);
     } catch (error) {
       alert('Error en login.');
+
     }
   };
 
