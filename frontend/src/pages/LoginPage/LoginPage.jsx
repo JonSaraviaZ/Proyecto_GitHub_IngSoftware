@@ -19,7 +19,11 @@ const LoginPage = ({ setToken }) => {
   };
 
   return (
+<<<<<<< HEAD
     <div className={styles.bodyWrapper}> {/* Puedes usar esta clase si quieres aplicar estilos de body */}
+=======
+      <div className={styles.formContainer}> 
+>>>>>>> develop_jsaravia
         <form onSubmit={handleSubmit} className={styles.containerGeneral}>
             <div className={styles.containerHijo}>
                 <img className={styles.logo} src="/images/logo.png" alt="Logo del sitio"/>
@@ -27,24 +31,32 @@ const LoginPage = ({ setToken }) => {
                     <h1>Bienvenido a la Biblioteca Digital</h1>
                     <input type="email" placeholder="Ingresa tu correo" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <input type="password" placeholder="Ingresa tu contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <button type="submit">Iniciar sesión</button>
+                    <button className={styles.buttonIniciarSesion} type="submit">Iniciar sesión</button>
                 </div>
             </div>
+            <hr className={styles.separator} />
             <div className={styles.containerHijo}>
                 <h2>No tienes cuenta</h2>
                 <h2>Regístrate acá</h2>
                 <div className={styles.containerLogin}>
-                    <button type="submit">Crear cuente</button>
+                    <button className={styles.buttonCrearCuenta} type="submit">Crear cuente</button>
                 </div>
             </div>
+            <hr className={styles.separator} />
             <div className={styles.containerHijo}>
                 <h2>No tienes cuenta</h2>
                 <div className={styles.containerLogin}>
-                    <button type="submit">Ingresar como invitado</button>
+                    <button className={styles.buttonIngresarInvitado} type="submit">Ingresar como invitado</button>
                 </div>
             </div>
         </form>
+<<<<<<< HEAD
   </div>
+=======
+      </div>
+        
+    
+>>>>>>> develop_jsaravia
   );
 };
 
