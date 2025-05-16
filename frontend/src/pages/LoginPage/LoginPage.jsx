@@ -25,23 +25,23 @@ const LoginPage = ({ setToken }) => {
             <div className={styles.containerHijo}>
                 <img className={styles.logo} src="/images/logo.png" alt="Logo del sitio"/>
                 <div className={styles.containerLogin}>
-                    <h1>Bienvenido a la Biblioteca Digital</h1>
-                    <input type="email" placeholder="Ingresa tu correo" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <input type="password" placeholder="Ingresa tu contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <h1 className={styles.tituloPrincipal}>Bienvenido a la Biblioteca Digital</h1>
+                    <input className={styles.inputDatos} type="email" placeholder="Ingresa tu correo" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input className={styles.inputDatos}type="password" placeholder="Ingresa tu contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
                     <button className={styles.buttonIniciarSesion} type="submit">Iniciar sesión</button>
                 </div>
             </div>
             <hr className={styles.separator} />
             <div className={styles.containerHijo}>
-                <h2>No tienes cuenta</h2>
-                <h2>Regístrate acá</h2>
+                <h2 className={styles.tituloSecundario}>No tienes cuenta</h2>
+                <h2 className={styles.tituloSecundario}>Regístrate acá</h2>
                 <div className={styles.containerLogin}>
                     <button className={styles.buttonCrearCuenta} type="submit">Crear cuenta</button>
                 </div>
             </div>
             <hr className={styles.separator} />
             <div className={styles.containerHijo}>
-                <h2>Ingresar como invitado</h2>
+                <h2 className={styles.tituloSecundario}>Ingresar como invitado</h2>
                 <div className={styles.containerLogin}>
                     <button className={styles.buttonIngresarInvitado} type="submit">Ingresar como invitado</button>
                 </div>
