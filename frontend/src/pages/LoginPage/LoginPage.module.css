@@ -1,0 +1,121 @@
+/* Estas son las variables con los colores */
+:root { 
+    /* Colores */
+    --azul-biblioteca: #2A4D8F;
+    --fondo-general: #F8F9FA;
+    --fondo-secundarios: #E1E5EB;
+    --h1:#212529;
+    --h2:#6C757D;
+    --verde-academico: #5DA271;
+    --enfasos-en-botones: #F6A623;
+    --bordes-1:#DADDE1;
+    --bordes-2: #3A3D42;
+    --fondo-header:#D9D9D9;
+    --fondo-titulo-body:#A8B29F;
+
+    /* Tipografías */
+
+        /* Fuentes base */
+    --fuente-base: 'Inter', sans-serif;
+
+    /* Tamaños de fuente */
+    --h1-size: 32px;
+    --h2-size: 24px;
+    --h3-size: 20px;
+    --h4-size: 20px;
+    --parrafo-size: 16px;
+    --texto-secundario-size: 14px;
+    --boton-size: 13px;
+    --cita-size: 18px;
+
+    /* Pesos de fuente */
+    --semi-bold: 600;
+    --medium: 500;
+    --regular: 400;
+  }
+  
+
+.bodyWrapper{
+    background-color: var(--azul-biblioteca);
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.containerGeneral{
+    display: flex;
+    padding: 100px 250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 20px;
+    border: 1px solid var(--bordes-1);
+    background: var(--fondo-secundarios);
+    }
+
+.containerHijo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: var(--fuente-base);
+    font-size: var(--h1-size);
+    font-weight: var(--semi-bold);
+    color: var(--h1);
+  }
+  
+  h2 {
+    font-family: var(--fuente-base);
+    font-size: var(--h2-size);
+    font-weight: var(--medium);
+    color: var(--h1);
+  }
+
+.containerHijo img{
+
+    width: 72px;
+    height: 69px;
+    flex-shrink: 0;
+}
+
+.containerLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+input{
+    width: 100%;
+    max-width: 600px;
+    padding: 12px 16px;
+    border: 2px solid var(--bordes-1);
+    border-radius: 8px;
+    background-color: var(--fondo-input, #fff);
+    color: var(--color-texto-input, #000);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+button{
+    display: flex;
+    width: 356px;
+    padding: 4px 331px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--bordes-2);
+    background: var(--enfasos-en-botones, rgba(246, 166, 35, 0.60));
+}
