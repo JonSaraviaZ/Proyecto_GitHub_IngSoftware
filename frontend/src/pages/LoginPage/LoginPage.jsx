@@ -3,10 +3,20 @@ import styles from './LoginPage.module.css';
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = ({ setToken }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
+
+  const handleRedirectRegister = () => {
+    navigate('/Register');
+  };
+  const handleRedirectHome = () => {
+    navigate('/HomePage');
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +38,7 @@ const LoginPage = ({ setToken }) => {
                     <h1 className={styles.tituloPrincipal}>Bienvenido a la Biblioteca Digital</h1>
                     <input className={styles.inputDatos} type="email" placeholder="Ingresa tu correo" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <input className={styles.inputDatos}type="password" placeholder="Ingresa tu contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <button className={styles.buttonIniciarSesion} type="submit">Iniciar sesión</button>
+                    <button className={styles.buttonIniciarSesion} onClick={handleRedirectHome} type="submit">Iniciar sesión</button>
                 </div>
             </div>
             <hr className={styles.separator} />
@@ -36,14 +46,14 @@ const LoginPage = ({ setToken }) => {
                 <h2 className={styles.tituloSecundario}>No tienes cuenta</h2>
                 <h2 className={styles.tituloSecundario}>Regístrate acá</h2>
                 <div className={styles.containerLogin}>
-                    <button className={styles.buttonCrearCuenta} type="submit">Crear cuenta</button>
+                    <button type="button" className={styles.buttonCrearCuenta} onClick={handleRedirectRegister}>Crear cuenta</button>
                 </div>
             </div>
             <hr className={styles.separator} />
             <div className={styles.containerHijo}>
                 <h2 className={styles.tituloSecundario}>Ingresar como invitado</h2>
                 <div className={styles.containerLogin}>
-                    <button className={styles.buttonIngresarInvitado} type="submit">Ingresar como invitado</button>
+                    <button className={styles.buttonIngresarInvitado} onClick={handleRedirectHome} type="button">Ingresar como invitado</button>
                 </div>
             </div>
         </form>
