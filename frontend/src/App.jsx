@@ -1,18 +1,18 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/LoginPage/LoginPage';
-import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
-import HistoryPage from './pages/HomePage/HomePage';
-import Register from './pages/Register/Register';
+import HistoryPage from './pages/HistoryPage/HistoryPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 import RegisterExitoso from './pages/RegisterExitoso/RegisterExitoso';
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Navigate to="/Login" replace />} />
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
+        <Route path="/RegisterPage" element={<RegisterPage />} />
         <Route path="/RegisterExitoso" element={<RegisterExitoso />} />
         <Route path="/HistoryPage" element={<HistoryPage />} />
       </Routes>

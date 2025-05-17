@@ -1,0 +1,99 @@
+/* Desarrollo de estilos por parte de Diana */
+/* Estas son las variables con los colores */
+:root { 
+    /* Colores */
+    --azul-biblioteca: #2A4D8F;
+    --fondo-general: #F8F9FA;
+    --fondo-secundarios: #E1E5EB;
+    --h1:#212529;
+    --h2:#6C757D;
+    --verde-academico: #5DA271;
+    --enfasos-en-botones: #F6A623;
+    --bordes-1:#DADDE1;
+    --bordes-2: #3A3D42;
+    --fondo-header:#D9D9D9;
+    --fondo-titulo-body:#A8B29F;
+
+    /* Tipografías */
+
+        /* Fuentes base */
+    --fuente-base: 'Inter', sans-serif;
+
+    /* Tamaños de fuente */
+    --h1-size: 32px;
+    --h2-size: 24px;
+    --h3-size: 20px;
+    --h4-size: 20px;
+    --parrafo-size: 16px;
+    --texto-secundario-size: 14px;
+    --boton-size: 13px;
+    --cita-size: 18px;
+
+    /* Pesos de fuente */
+    --semi-bold: 600;
+    --medium: 500;
+    --regular: 400;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .cuerpoContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--fondo-general);
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .tituloPrincipal,
+  .tituloSecundario,
+  .tituloTerciario{
+    color: var(--h1);
+  }
+
+  .portada{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  .fotoPortada{
+    width: 20vw;
+  }
+
+  .containerHijo{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    gap: 30px;
+
+  }
+
+  .containerNieto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .botonesHome{
+    color: var(--h1);
+    background: var(--fondo-general);
+    border: 1px solid var(--bordes-2);
+    width: 80%;
+  }
+
+  .botonesHome :hover{
+    background-color: var(--enfasos-en-botones);
+    color: var(--h1);
+  }
+
+  
+  /* Afinar y terminar los estilos de acuerdo al diseño del Figma */
