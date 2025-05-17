@@ -1,9 +1,13 @@
 const Book = require('../models/bookModel');
 
 const createBook = async (req, res) => {
-  const { title, author, publisher, status } = req.body;
-  await Book.create({ title, author, publisher, status });
-  res.status(201).send({ message: 'Libro registrado' });
+  try {
+    const { titulo, autor, descripcion, cantidad } = req.body; // Usa los nombres reales
+    await Book.create({ titulo, autor, descripcion, cantidad }); // Coincidir con el modelo
+    res.status(201).send({ message: 'Libro registrado' });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
 const getBooks = async (req, res) => {
