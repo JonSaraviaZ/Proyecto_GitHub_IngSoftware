@@ -1,3 +1,4 @@
+// models/userModel.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
@@ -7,11 +8,16 @@ const User = sequelize.define('User', {
         primaryKey: true,
         autoIncrement: true,
     },
+    rut: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+    },
     nombre: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    email: {
+    correo: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
