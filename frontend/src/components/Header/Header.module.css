@@ -1,6 +1,3 @@
-
-/* Desarrollo de estilos por parte de Diana */
-
 /* Estas son las variables con los colores */
 :root { 
     /* Colores */
@@ -39,5 +36,23 @@
 
   * {
     box-sizing: border-box;
-}
+    }
 
+    .headerContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        padding: 10px 20px;
+        width: 100vw;
+        background-color: var(--fondo-header);
+        color: var(--h1);
+    }
+
+    .buscador{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
