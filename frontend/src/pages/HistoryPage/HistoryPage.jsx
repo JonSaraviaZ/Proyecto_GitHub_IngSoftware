@@ -1,9 +1,17 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import styles from './HistoryPage.module.css';
+import History from '../../components/History/History';
 
 const HistoryPage = () => {
+
     return (
-        <h1>Texto HistoryPage</h1>
+        <div>
+            <Header/>
+            <History/>
+            <Footer/>
+        </div>
     )
 }
 
