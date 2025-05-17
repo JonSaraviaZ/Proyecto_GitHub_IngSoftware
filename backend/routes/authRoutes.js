@@ -1,10 +1,10 @@
-// authRoutes.js
+// routes/authRoutes.js
 const express = require('express');
-const { register, login } = require('../controllers/authControllers');
+const { register, loginUsuario } = require('../controllers/authControllers');
 
 const router = express.Router();
 
-router.post('/register', register);
-router.post('/login', login);
+router.post('/registro', register); // Cambiado para coincidir con el frontend
+router.post('/login', loginUsuario);
 
 module.exports = router;
