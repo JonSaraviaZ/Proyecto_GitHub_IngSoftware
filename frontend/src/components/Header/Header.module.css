@@ -1,4 +1,3 @@
-/* Desarrollo de estilos por parte de Diana */
 /* Estas son las variables con los colores */
 :root { 
     /* Colores */
@@ -37,47 +36,23 @@
 
   * {
     box-sizing: border-box;
-  }
+    }
 
-  .cuerpoContainer{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--fondo-general);
-    align-items: flex-start;
-    gap: 40px;
-  }
+    .headerContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        padding: 10px 20px;
+        width: 100vw;
+        background-color: var(--fondo-header);
+        color: var(--h1);
+    }
 
-  .tituloPrincipal,
-  .tituloSecundario,
-  .tituloTerciario{
-    color: var(--h1);
-  }
-
-  .portada{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-  }
-
-  .fotoPortada{
-    width: 20vw;
-  }
-
-  .containerHijo{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 100vw;
-
-  }
-  
-  .botonesHome{
-    color: var(--h1);
-    background: var(--fondo-general);
-  }
-
-  /* Afinar y terminar los estilos de acuerdo al diseño del Figma */
+    .buscador{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
