@@ -6,6 +6,7 @@ const sequelize = require('./config/database');
 const authRoutes = require('./routes/authRoutes');
 const bookRoutes = require('./routes/bookRoutes');
 const loanRoutes = require('./routes/loanRoutes');
+const homeRoutes = require('./routes/homeRoutes');
 
 dotenv.config();
 
@@ -14,10 +15,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Rutas
-app.use('/api', authRoutes);
-app.use('/api', bookRoutes);
-app.use('/api', loanRoutes);
+// Rutas organizadas por prefijo
+app.use('/api/auth', authRoutes);
+console.log("Ruta /api/auth cargada");
+app.use('/api/books', bookRoutes);
+console.log("Ruta /api/books cargada");
+app.use('/api/loans', loanRoutes);
+console.log("Ruta /api/loans cargada");
+app.use('/api/home', homeRoutes);
 
 // Ruta raíz para prueba
 app.get('/', (req, res) => {
