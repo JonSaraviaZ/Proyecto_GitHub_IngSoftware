@@ -36,22 +36,6 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Ruta no encontrada' });
 });
 
-function App() {
-  return (
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route
-        path="/HomePage"
-        element={
-          <PrivateRoute>
-            <HomePage />
-          </PrivateRoute>
-        }
-      />
-      {/* otras rutas */}
-    </Routes>
-  );
-}
 const PORT = process.env.PORT || 5000;
 
 sequelize.sync({ alter: true })
@@ -64,5 +48,3 @@ sequelize.sync({ alter: true })
   .catch(err => {
     console.error('Error sincronizando tablas:', err);
   });
-
-export default App;
