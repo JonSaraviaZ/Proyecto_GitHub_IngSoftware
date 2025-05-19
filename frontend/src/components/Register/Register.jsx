@@ -26,7 +26,6 @@ const Register = () => {
    const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('API_URL:', import.meta.env.VITE_API_URL);
       await axios.post(`${import.meta.env.VITE_API_URL}/registro`, {
         rut,
         name,
