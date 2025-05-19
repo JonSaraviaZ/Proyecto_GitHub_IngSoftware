@@ -30,11 +30,26 @@ const [rut, setRut] = useState('');
   //Confirma si el usuario está registrado o no
   const handleSubmit = async (e) => { 
     e.preventDefault();
+    
+    // Validación simple en el frontend antes de enviar
+    if (password !== confirmPassword) {
+      alert('Las contraseñas no coinciden');
+      return;
+    }
+
     try {
-      await axios.post('http://localhost:5000/api/registro', { name, email, password });
+      await axios.post('http://localhost:5000/api/registro', {
+        rut,
+        nombre: name,
+        correo: email,
+        contraseña: password,
+        confirmarContraseña: confirmPassword
+      });
+
       alert('Usuario registrado');
+      handleRedirectRegister(); // Redirige después del registro exitoso
     } catch (error) {
-      alert('Error en el registro');
+      alert(error.response?.data?.message || 'Error en el registro');
     }
   };
 
