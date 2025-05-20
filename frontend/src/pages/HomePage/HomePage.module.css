@@ -36,50 +36,204 @@
     --regular: 400;
   }
 
-  * {
-    box-sizing: border-box;
+  body {
+  font-family: var(--fuente-base);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============== CONTENEDOR PRINCIPAL =============== */
+.cuerpoContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 40px 80px;
+  background-color: var(--fondo-general);
+  gap: 40px;
+}
+
+/* =============== TÍTULOS =============== */
+.tituloPrincipal {
+  color: var(--azul-biblioteca);
+  font-size: var(--h1-size);
+  font-weight: var(--semi-bold);
+}
+
+.tituloSecundario {
+  color: var(--h1);
+  font-size: var(--h2-size);
+  font-weight: var(--medium);
+  margin-bottom: 10px;
+}
+
+.tituloTerciario {
+  color: var(--h2);
+  font-size: var(--h3-size);
+  font-weight: var(--regular);
+}
+
+/* =============== PORTADA =============== */
+.portada {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fondo-secundarios);
+  padding: 30px;
+  border-radius: 12px;
+  gap: 40px;
+}
+
+.fotoPortada {
+  width: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* =============== TARJETAS DE BOTONES =============== */
+.containerHijo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+}
+
+.containerNieto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* =============== BOTONES =============== */
+.botonesHome {
+  color: var(--h1);
+  background: var(--fondo-general);
+  border: 1px solid var(--bordes-2);
+  width: 80%;
+  padding: 10px 16px;
+  font-size: var(--boton-size);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botonesHome:hover {
+  background-color: var(--enfasis-en-botones);
+  color: var(--h1);
+}
+
+/* =============== DISEÑO RESPONSIVE =============== */
+
+/* =====================  Teléfono / Tablet 768px ===================== */
+@media (max-width: 768px) {
+  .cuerpoContainer {
+    padding: 20px;
+    gap: 20px;
   }
 
-  .cuerpoContainer{
-    display: flex;
+  .portada {
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--fondo-general);
-    align-items: flex-start;
-    gap: 40px;
+    text-align: center;
   }
 
-  .tituloPrincipal,
-  .tituloSecundario,
-  .tituloTerciario{
-    color: var(--h1);
+  .fotoPortada {
+    width: 80%;
   }
 
-  .portada{
-    display: flex;
-    flex-direction: row;
+  .tituloPrincipal {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .containerHijo {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100vw;
   }
 
-  .fotoPortada{
-    width: 20vw;
+  .botonesHome {
+    width: 90%;
+  }
+}
+
+/* =====================  Teléfono pequeños 425px ===================== */
+@media (max-width: 425px) {
+  .tituloSecundario {
+    font-size: 20px;
   }
 
-  .containerHijo{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 100vw;
-
-  }
-  
-  .botonesHome{
-    color: var(--h1);
-    background: var(--fondo-general);
+  .tituloTerciario {
+    font-size: 16px;
   }
 
-  /* Afinar y terminar los estilos de acuerdo al diseño del Figma */
+  .botonesHome {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
 
+/* ===================== Laptop: 769px a 1024px ===================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cuerpoContainer {
+    padding: 30px 60px;
+    gap: 30px;
+  }
+
+  .tituloPrincipal {
+    font-size: 28px;
+  }
+
+  .fotoPortada {
+    width: 220px;
+  }
+
+  .botonesHome {
+    font-size: 14px;
+    width: 70%;
+  }
+}
+
+/* ===================== Escritorio: 1025px a 1440px ===================== */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .cuerpoContainer {
+    padding: 40px 80px;
+  }
+
+  .tituloPrincipal {
+    font-size: var(--h1-size);
+  }
+
+  .fotoPortada {
+    width: 250px;
+  }
+
+  .botonesHome {
+    font-size: 15px;
+    width: 60%;
+  }
+}
+
+/* ===================== Pantallas muy grandes: 1441px en adelante ===================== */
+@media (min-width: 1441px) {
+  .cuerpoContainer {
+    padding: 60px 120px;
+  }
+
+  .tituloPrincipal {
+    font-size: 36px;
+  }
+
+  .fotoPortada {
+    width: 300px;
+  }
+
+  .botonesHome {
+    font-size: 16px;
+    width: 50%;
+  }
+}
