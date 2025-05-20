@@ -3,6 +3,7 @@ import styles from './LoginPage.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = ({ setToken }) => {
+<<<<<<< Updated upstream
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
@@ -117,6 +118,11 @@ const LoginPage = ({ setToken }) => {
           </div>
         </div>
       </form>
+=======
+  return (
+    <div className={styles.formContainer}>
+      <Login setToken={setToken} /> {/* <-- Corregido */}
+>>>>>>> Stashed changes
     </div>
   );
 };
