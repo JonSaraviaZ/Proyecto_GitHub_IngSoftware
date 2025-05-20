@@ -36,7 +36,9 @@ const History = () => {
           <ul>
             {historial.map((item, index) => (
               <li key={index}>
-                <strong>Libro:</strong> {item.titulo} — <strong>Fecha:</strong> {item.fecha}
+                <strong>ID del libro:</strong> {item.bookId} — 
+                <strong>Fecha del préstamo:</strong> {new Date(item.fechaPrestamo).toLocaleDateString()} — 
+                <strong>Estado:</strong> {item.estado}
               </li>
             ))}
           </ul>
