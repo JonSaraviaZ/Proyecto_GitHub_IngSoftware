@@ -37,7 +37,6 @@ const Home = () => {
           <div className={styles.containerNieto}>
             <img src="/images/Foto2.png" alt="icono 1" />
             <button
-              onClick={handleRedirectForward}
               className={styles.botonesHome}
             >
               Solicitar libro
@@ -51,7 +50,8 @@ const Home = () => {
 
           <div className={styles.containerNieto}>
             <img src="/images/Foto2.png" alt="icono 3" />
-            <button className={styles.botonesHome}>Historial</button>
+            <button onClick={handleRedirectForward} 
+            className={styles.botonesHome}>Historial</button>
           </div>
         </div>
       </div>
