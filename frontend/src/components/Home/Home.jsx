@@ -35,7 +35,7 @@ const Home = () => {
 
         <div className={styles.containerHijo}>
           <div className={styles.containerNieto}>
-            <img src="/images/Foto2.png" alt="icono 1" />
+            <img className={styles.fotoOpciones} src="/images/Foto2.png" alt="icono 1" />
             <button
               className={styles.botonesHome}
             >
@@ -44,12 +44,12 @@ const Home = () => {
           </div>
 
           <div className={styles.containerNieto}>
-            <img src="/images/Foto2.png" alt="icono 2" />
+            <img className={styles.fotoOpciones} src="/images/Foto2.png" alt="icono 2" />
             <button className={styles.botonesHome}>Ver catálogo</button>
           </div>
 
           <div className={styles.containerNieto}>
-            <img src="/images/Foto2.png" alt="icono 3" />
+            <img className={styles.fotoOpciones} src="/images/Foto2.png" alt="icono 3" />
             <button onClick={handleRedirectForward} 
             className={styles.botonesHome}>Historial</button>
           </div>
