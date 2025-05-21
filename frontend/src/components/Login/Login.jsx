@@ -32,7 +32,7 @@ const Login = ({ setToken }) => {
 
   return (
     
-    <form form onSubmit={handleSubmit} className={styles.containerGeneral}>
+    <form onSubmit={handleSubmit} className={styles.containerGeneral}>
       <div className={styles.containerHijo}>
         <img className={styles.logo} src="/images/logo.png" alt="Logo del sitio"/>
         <div className={styles.containerLogin}>

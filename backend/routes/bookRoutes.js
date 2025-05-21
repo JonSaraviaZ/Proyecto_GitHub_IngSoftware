@@ -1,10 +1,8 @@
-// bookRoutes.js
 const express = require('express');
-const { createBook, getBooks } = require('../controllers/bookController');
-
 const router = express.Router();
+const { getBooks } = require('../controllers/bookController');
 
-router.post('/books', createBook);
-router.get('/books', getBooks);
+// Ruta pública solo para prueba
+router.get('/', getBooks);
 
 module.exports = router;
