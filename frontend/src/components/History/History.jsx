@@ -1,50 +1,44 @@
-import React, { useEffect, useState } from 'react'; //useEffect nos ayuda a hacer la llamada al backend y useState nos guarda y muestra los resultados
-import { useNavigate } from 'react-router-dom';
-import { obtenerHistorial } from '../../../src/services/api';
-import styles from './History.module.css';
+import React, { useEffect, useState } from "react";
+import { obtenerLibros } from "../../services/api";
+import style from './History.module.css';
 
 const History = () => {
-    const [historial, setHistorial] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const navigate = useNavigate();
+  const [libros, setLibros] = useState([]);
+  const [error, setError] = useState(false);
 
-    useEffect(() => {
-        const fetchHistorial = async () => {
-          try {
-            const response = await obtenerHistorial();
-            setHistorial(response.data);
-          } catch (err) {
-            setError('No se pudo cargar el historial');
-          } finally {
-            setLoading(false);
-          }
-        };
-    
-        fetchHistorial();
-      }, []);
+  useEffect(() => {
+    const cargarLibros = async () => {
+      const data = await obtenerLibros();
+      if (data) {
+        setLibros(data);
+        setError(false);
+      } else {
+        setError(true);
+      }
+    };
+
+    cargarLibros();
+  }, []);
 
   return (
-    <div className={styles.cuerpoContainer}>
-      <div className={styles.containerHijo}>
-        <h1>Historial del préstamo</h1>
-        {/* Acá renderizamos los datos extraidos desde el backend */}
-        {loading && <p>Cargando historial...</p>}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-
-        {!loading && !error && (
-          <ul>
-            {historial.map((item, index) => (
-              <li key={index}>
-                <strong>Libro:</strong> {item.titulo} — <strong>Fecha:</strong> {item.fecha}
-              </li>
-            ))}
-          </ul>
-        )}
-        <button onClick={() => navigate('/HomePage')}>Volver</button>
-      </div>
+    <div className={style.container}>
+      <h2 className={style.title}>Historial / Libros en Biblioteca</h2>
+      {error ? (
+        <p className={style.error}>No se pudieron cargar los libros. Por favor inicia sesión.</p>
+      ) : libros.length === 0 ? (
+        <p className={style.empty}>No hay libros registrados.</p>
+      ) : (
+        <ul className={style.bookList}>
+          {libros.map((libro) => (
+            <li key={libro.id} className={style.bookItem}>
+              <strong className={style.bookTitle}>{libro.titulo}</strong> — {libro.autor} ({libro.cantidad} disponibles)
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
 
 export default History;
+
