@@ -27,7 +27,7 @@ const History = () => {
   return (
     <div className={styles.cuerpoContainer}>
       <div className={styles.containerHijo}>
-        <h1>Historial del préstamo</h1>
+        <h1 className={styles.tituloPrincipal}>Historial del préstamo</h1>
         {/* Acá renderizamos los datos extraidos desde el backend */}
         {loading && <p>Cargando historial...</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
