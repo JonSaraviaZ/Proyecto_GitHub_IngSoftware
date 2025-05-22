@@ -1,49 +1,53 @@
-import React, { useEffect, useState } from 'react'; //useEffect nos ayuda a hacer la llamada al backend y useState nos guarda y muestra los resultados
-import { useNavigate } from 'react-router-dom';
-import { obtenerHistorial } from '../../../src/services/api';
-import styles from './History.module.css';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { obtenerLibros } from "../../services/api";
+import style from './History.module.css';
 
 const History = () => {
-    const [historial, setHistorial] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const navigate = useNavigate();
+  const [libros, setLibros] = useState([]);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const fetchHistorial = async () => {
-          try {
-            const response = await obtenerHistorial();
-            setHistorial(response.data);
-          } catch (err) {
-            setError('No se pudo cargar el historial');
-          } finally {
-            setLoading(false);
-          }
-        };
-    
-        fetchHistorial();
-      }, []);
+  useEffect(() => {
+    const cargarLibros = async () => {
+      const data = await obtenerLibros();
+      if (data) {
+        setLibros(data);
+        setError(false);
+      } else {
+        setError(true);
+      }
+      setLoading(false);
+    };
+
+    cargarLibros();
+  }, []);
 
   return (
-    <div className={styles.cuerpoContainer}>
-      <div className={styles.containerHijo}>
-        <h1 className={styles.tituloPrincipal}>Historial del préstamo</h1>
-        {/* Acá renderizamos los datos extraidos desde el backend */}
-        {loading && <p>Cargando historial...</p>}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+    <div className={style.cuerpoContainer}>
+      <div className={style.containerHijo}>
+        <h2 className={style.tituloPrincipal}>Historial / Libros en Biblioteca</h2>
 
-        {!loading && !error && (
-          <ul>
-            {historial.map((item, index) => (
-              <li key={index}>
-                <strong>ID del libro:</strong> {item.bookId} — 
-                <strong>Fecha del préstamo:</strong> {new Date(item.fechaPrestamo).toLocaleDateString()} — 
-                <strong>Estado:</strong> {item.estado}
+        {loading && <p className={style.loading}>Cargando historial...</p>}
+
+        {error ? (
+          <p className={style.error}>No se pudieron cargar los libros. Por favor inicia sesión.</p>
+        ) : libros.length === 0 ? (
+          <p className={style.empty}>No hay libros registrados.</p>
+        ) : (
+          <ul className={style.bookList}>
+            {libros.map((libro) => (
+              <li key={libro.id} className={style.bookItem}>
+                <strong className={style.bookTitle}>{libro.titulo}</strong> — {libro.autor} ({libro.cantidad} disponibles)
               </li>
             ))}
           </ul>
         )}
-        <button onClick={() => navigate('/HomePage')}>Volver</button>
+
+        <button className={style.botonVolver} onClick={() => navigate('/HomePage')}>
+          Volver
+        </button>
       </div>
     </div>
   );
