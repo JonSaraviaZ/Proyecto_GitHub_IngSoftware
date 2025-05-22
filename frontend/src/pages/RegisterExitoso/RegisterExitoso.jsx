@@ -1,8 +1,6 @@
 import RegisterConfirmed from "../../components/RegisterConfirmed/RegisterConfirmed";
 
 const RegisterExitoso = () => {
-
-
     return (
         <div>
             <RegisterConfirmed/>
