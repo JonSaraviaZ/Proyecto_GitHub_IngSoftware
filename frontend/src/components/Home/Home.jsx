@@ -11,6 +11,10 @@ const Home = () => {
         navigate('/HistoryPage');
     };
 
+    const handleRedirectRequestBook = () => {
+        navigate('/RequestBookPage');
+    };
+
     return (
         <div className={styles.cuerpoContainer}>
             <h1 className={styles.tituloPrincipal}>Categoría</h1>
@@ -25,7 +29,7 @@ const Home = () => {
             <div className={styles.containerHijo}>
                 <div className={styles.containerNieto}>
                     <img src='/images/Foto2.png'></img>
-                    <button className={styles.botonesHome}>Solicitar libro</button>
+                    <button onClick={handleRedirectRequestBook} className={styles.botonesHome}>Solicitar libro</button>
                 </div>
                 <div className={styles.containerNieto}>
                     <img src='/images/Foto2.png'></img>
