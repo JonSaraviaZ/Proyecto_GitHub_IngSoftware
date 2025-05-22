@@ -25,7 +25,7 @@ const Home = () => {
             <div className={styles.containerHijo}>
                 <div className={styles.containerNieto}>
                     <img src='/images/Foto2.png'></img>
-                    <button onClick={handleRedirectForward} className={styles.botonesHome}>Solicitar libro</button>
+                    <button className={styles.botonesHome}>Solicitar libro</button>
                 </div>
                 <div className={styles.containerNieto}>
                     <img src='/images/Foto2.png'></img>
@@ -33,7 +33,7 @@ const Home = () => {
                 </div>
                 <div className={styles.containerNieto}>
                     <img src='/images/Foto2.png'></img>
-                    <button className={styles.botonesHome}>Historial</button>
+                    <button onClick={handleRedirectForward} className={styles.botonesHome}>Historial</button>
                 </div>
             </div>
         </div>

@@ -67,5 +67,28 @@
   padding: 0;
 }
 
+.error,
+.empty{
+  color: var(--h1);
+}
+
+.botonVolver{
+  color: var(--h1);
+  background: var(--fondo-general);
+  border: 1px solid var(--bordes-2);
+  width: 28%;
+  padding: 10px 16px;
+  font-size: var(--boton-size);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botonVolver:hover {
+  background-color: var(--enfasis-en-botones);
+  color: var(--h1);
+}
+
+
 
 /* Diana entregar los estilos a HistoryModule de acuerdo a lo diseñado en Figma */
