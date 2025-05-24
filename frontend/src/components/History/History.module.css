@@ -89,6 +89,14 @@
   color: var(--h1);
 }
 
+.bookTitle{
+  color: var(--h2);
+  
+}
+
+.bookItem{
+  color: var(--h2);
+}
 
 
 /* Diana entregar los estilos a HistoryModule de acuerdo a lo diseñado en Figma */
