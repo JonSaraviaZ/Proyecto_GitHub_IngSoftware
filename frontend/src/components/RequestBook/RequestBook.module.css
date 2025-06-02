@@ -44,8 +44,13 @@ box-sizing: border-box;
 .cuerpoContainer {
 display: flex;
 flex-direction: column;
+justify-content: center;
+align-items: center;
 min-height: 70vh;
 width: 100vw;
 padding: 40px 80px;
 background-color: var(--fondo-general);
 }
+
+
+/* Diana, entregar los estilos a RequestBook. Recuerda que la responsividad debe ser configurada con BootStrap */
