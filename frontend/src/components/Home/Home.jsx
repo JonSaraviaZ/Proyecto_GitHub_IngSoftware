@@ -15,6 +15,10 @@ const Home = () => {
         navigate('/RequestBookPage');
     };
 
+    const handleRedirectCatalog = () => {
+        navigate('/CatalogPage');
+    };
+
     return (
         <div className={styles.cuerpoContainer}>
             <h1 className={styles.tituloPrincipal}>Categoría</h1>
@@ -33,7 +37,7 @@ const Home = () => {
                 </div>
                 <div className={styles.containerNieto}>
                     <img src='/images/Foto2.png'></img>
-                    <button className={styles.botonesHome}>Ver catálogo</button>
+                    <button onClick={handleRedirectCatalog} className={styles.botonesHome}>Ver catálogo</button>
                 </div>
                 <div className={styles.containerNieto}>
                     <img src='/images/Foto2.png'></img>
