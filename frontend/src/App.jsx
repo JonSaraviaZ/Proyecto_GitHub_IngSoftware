@@ -6,6 +6,7 @@ import HistoryPage from './pages/HistoryPage/HistoryPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import RegisterExitoso from './pages/RegisterExitoso/RegisterExitoso';
 import RequestBookPage from './pages/RequestBookPage/RequestBookPage';
+import CatalogPage from './pages/CatalogPage/CatalogPage';
 
 function App() {
   const [, setToken] = useState(null); // <-- Agregado
@@ -20,6 +21,7 @@ function App() {
         <Route path="/RegisterExitoso" element={<RegisterExitoso />} />
         <Route path="/HistoryPage" element={<HistoryPage />} />
         <Route path="/RequestBookPage" element={<RequestBookPage />} />
+        <Route path="/CatalogPage" element={<CatalogPage />} />
       </Routes>
     </Router>
   );
