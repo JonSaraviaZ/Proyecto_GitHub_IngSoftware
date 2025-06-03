@@ -1,3 +1,4 @@
+ /* Desarrollo de estilos por parte de Diana */
 /* Estas son las variables con los colores */
 :root { 
   /* Colores */
@@ -34,20 +35,22 @@
   --regular: 400;
 }
 
+
 * {
-  box-sizing: border-box;
-  }
-
-
-
-.formContainer{
-  display: flex;
-  position: relative;
-  background-color: var(--azul-biblioteca);
-  width: 100vw;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+box-sizing: border-box;
 }
+
+/* =============== CONTENEDOR PRINCIPAL =============== */
+.cuerpoContainer {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 70vh;
+width: 100vw;
+padding: 40px 80px;
+background-color: var(--fondo-general);
+}
+
+
+/* Diana, entregar los estilos a RequestBook. Recuerda que la responsividad debe ser configurada con BootStrap */
