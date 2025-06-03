@@ -50,35 +50,36 @@
   width: 100vw;
   padding: 40px 80px;
   background-color: var(--fondo-general);
+  gap: 40px;
   }
   
-  .tituloPrincipal {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
+  .containerHijo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 
-.booksGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
+  .imageNoFound{
+    max-height: 500px;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
 
-.bookCard {
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+  .containerText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+  }
 
-.bookImage {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 0.5rem;
-}
+  .tituloPrincipal{
+    font-size: 100px;
+  }
 
-.backButton {
+  .backButton {
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
     background-color: var(--azul-biblioteca);
@@ -93,10 +94,4 @@
     background-color: var(--bordes-2);
 }
 
-.mensajeVacio {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 2rem;
-}
-
-/* Diana por favor entregar los estilos que falten y la responsividad con Bootstrap */
+  /* Diana por favor entregar los estilos que falten y la responsividad con Bootstrap */
