@@ -130,7 +130,68 @@
 
 /* =============== DISEÑO RESPONSIVE =============== */
 
-/* =====================  Teléfono / Tablet 768px ===================== */
+/* ===================== Pantallas muy grandes: 1441px en adelante ===================== */
+@media (min-width: 1441px) {
+  .cuerpoContainer {
+    padding: 60px 120px;
+  }
+
+  .tituloPrincipal {
+    font-size: 36px;
+  }
+
+  .fotoPortada {
+    width: 300px;
+  }
+
+  .botonesHome {
+    font-size: 16px;
+    width: 50%;
+  }
+}
+
+/* ===================== Escritorio: 1025px a 1440px ===================== */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .cuerpoContainer {
+    padding: 40px 80px;
+  }
+
+  .tituloPrincipal {
+    font-size: var(--h1-size);
+  }
+
+  .fotoPortada {
+    width: 250px;
+  }
+
+  .botonesHome {
+    font-size: 15px;
+    width: 60%;
+  }
+}
+
+/* ===================== Laptop: 769px a 1024px ===================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cuerpoContainer {
+    padding: 30px 60px;
+    gap: 30px;
+  }
+
+  .tituloPrincipal {
+    font-size: 28px;
+  }
+
+  .fotoPortada {
+    width: 220px;
+  }
+
+  .botonesHome {
+    font-size: 14px;
+    width: 70%;
+  }
+}
+
+/* ===================== Teléfono / Tablet 768px ===================== */
 @media (max-width: 768px) {
   .cuerpoContainer {
     padding: 20px;
@@ -161,7 +222,7 @@
   }
 }
 
-/* =====================  Teléfono pequeños 425px ===================== */
+/* ===================== Teléfonos pequeños: 425px ===================== */
 @media (max-width: 425px) {
   .tituloSecundario {
     font-size: 20px;
@@ -177,63 +238,48 @@
   }
 }
 
-/* ===================== Laptop: 769px a 1024px ===================== */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* ===================== Teléfonos pequeños: 320px ===================== */
+
+@media (max-width: 320px) {
   .cuerpoContainer {
-    padding: 30px 60px;
-    gap: 30px;
+    padding: 16px;
+    gap: 16px;
   }
 
   .tituloPrincipal {
-    font-size: 28px;
+    font-size: 20px;
+    text-align: center;
   }
 
-  .fotoPortada {
-    width: 220px;
+  .tituloSecundario {
+    font-size: 18px;
+    text-align: center;
   }
 
-  .botonesHome {
+  .tituloTerciario {
     font-size: 14px;
-    width: 70%;
-  }
-}
-
-/* ===================== Escritorio: 1025px a 1440px ===================== */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .cuerpoContainer {
-    padding: 40px 80px;
+    text-align: center;
   }
 
-  .tituloPrincipal {
-    font-size: var(--h1-size);
+  .portada {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
   }
 
   .fotoPortada {
-    width: 250px;
+    width: 90%;
+  }
+
+  .containerHijo {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   .botonesHome {
-    font-size: 15px;
-    width: 60%;
-  }
-}
-
-/* ===================== Pantallas muy grandes: 1441px en adelante ===================== */
-@media (min-width: 1441px) {
-  .cuerpoContainer {
-    padding: 60px 120px;
-  }
-
-  .tituloPrincipal {
-    font-size: 36px;
-  }
-
-  .fotoPortada {
-    width: 300px;
-  }
-
-  .botonesHome {
-    font-size: 16px;
-    width: 50%;
+    font-size: 12px;
+    padding: 8px;
+    width: 95%;
   }
 }
