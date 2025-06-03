@@ -7,6 +7,7 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import RegisterExitoso from './pages/RegisterExitoso/RegisterExitoso';
 import RequestBookPage from './pages/RequestBookPage/RequestBookPage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
+import Component404 from './pages/404PageNoFound/404PageNoFound';
 
 function App() {
   const [, setToken] = useState(null); // <-- Agregado
@@ -22,6 +23,7 @@ function App() {
         <Route path="/HistoryPage" element={<HistoryPage />} />
         <Route path="/RequestBookPage" element={<RequestBookPage />} />
         <Route path="/CatalogPage" element={<CatalogPage />} />
+        <Route path="/*" element={<Component404 />} />
       </Routes>
     </Router>
   );
