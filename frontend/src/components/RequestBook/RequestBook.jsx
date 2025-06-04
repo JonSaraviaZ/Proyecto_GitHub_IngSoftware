@@ -2,19 +2,19 @@ import style from './RequestBook.module.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-//Componente que despliega el formulario para la solicitud de libros
-
+// Componente que despliega el formulario para la solicitud de libros
 const RequestBook = () => {
 
-    //Se crearon  los estados para manejar los datos a agregar 
     const navigate = useNavigate();
+
+    // Estados para manejar los datos del formulario
     const [titulo, setTitulo] = useState('');
     const [autor, setAutor] = useState('');
     const [fechaRetiro, setFechaRetiro] = useState('');
     const [fechaDevolucion, setFechaDevolucion] = useState('');
     const [error, setError] = useState('');
 
-    //Constante que habilita campos para calcular los días hábiles por préstamos. Son máximo 7 días.
+    // Calcula la cantidad de días hábiles entre dos fechas
     const calcularDiasHabiles = (inicio, fin) => {
         let count = 0;
         const current = new Date(inicio);
@@ -29,36 +29,48 @@ const RequestBook = () => {
         return count;
     };
 
-    //Maneja el envío de los datos al Backend
+    // Maneja el envío del formulario al backend
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
 
+        // Validación de campos vacíos
         if (!titulo || !autor || !fechaRetiro || !fechaDevolucion) {
             setError('Por favor completa todos los campos.');
             return;
         }
 
+        // Validación de días hábiles (máximo 7)
         const diasHabiles = calcularDiasHabiles(fechaRetiro, fechaDevolucion);
         if (diasHabiles > 7) {
             setError('La fecha de devolución no puede superar los 7 días hábiles desde la fecha de retiro.');
             return;
         }
 
-        const solicitud = {
-            titulo,
-            autor,
-            fechaRetiro,
-            fechaDevolucion
-        };
-
         try {
-            const response = await fetch('https://tu-backend.com/api/solicitudes', {
-                method: 'PUT',
+            // Obtiene token y userId desde localStorage
+            const token = localStorage.getItem('token');
+            const userId = localStorage.getItem('userId');
+
+            if (!token || !userId) {
+                setError('Usuario no autenticado. Inicia sesión nuevamente.');
+                return;
+            }
+
+            // Envío de la solicitud al backend
+            const response = await fetch('http://localhost:5000/api/loans', {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
                 },
-                body: JSON.stringify(solicitud),
+                body: JSON.stringify({
+                    userId,
+                    titulo,
+                    autor,
+                    fechaRetiro,
+                    fechaDevolucion
+                }),
             });
 
             if (!response.ok) throw new Error('Error al enviar la solicitud.');
@@ -72,6 +84,7 @@ const RequestBook = () => {
         }
     };
 
+    // Renderiza el formulario
     return (
         <div className={style.cuerpoContainer}>
             <div className={style.containerHijo}>
@@ -98,7 +111,7 @@ const RequestBook = () => {
                     </div>
 
                     <div>
-                        <label>Fecha deseada de retiro:</label>
+                        <label>Fecha de retiro:</label>
                         <input
                             type="date"
                             value={fechaRetiro}
@@ -117,11 +130,13 @@ const RequestBook = () => {
                         />
                     </div>
 
+                    {/* Muestra mensaje de error si lo hay */}
                     {error && <p style={{ color: 'red' }}>{error}</p>}
 
                     <button type="submit">Enviar solicitud</button>
                 </form>
 
+                {/* Botón para volver a la página principal */}
                 <button className={style.botonVolver} onClick={() => navigate('/HomePage')}>
                     Volver
                 </button>

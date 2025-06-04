@@ -55,7 +55,7 @@ const loginUsuario = async (req, res) => {
       { expiresIn: '1h' }
     );
 
-    res.json({ message: 'Inicio de sesión exitoso', token });
+    res.json({ message: 'Inicio de sesión exitoso', token, userId: usuario.id});
   } catch (error) {
     res.status(500).json({ message: 'Error al iniciar sesión', error: error.message });
   }
