@@ -23,11 +23,19 @@ const Login = ({ setToken }) => {
         email,
         password,
       });
+
+      // Guardar el token en localStorage
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("userId", response.data.userId);
+
+      // Llamar a la función setToken para actualizar el estado en el componente padre
       setToken(response.data.token);
       navigate("/HomePage");
-    } catch (error) {
-      alert("Error en login");
-    }
+
+  } catch (error) {
+    console.error("Error en login:", error);
+    alert("Error al iniciar sesión. Por favor, verifica tus credenciales e intenta nuevamente.");
+  }
   };
 
   return (
