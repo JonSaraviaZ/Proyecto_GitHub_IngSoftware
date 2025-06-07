@@ -39,10 +39,8 @@
  * {
   box-sizing: border-box;
 }
-
-body {
-  margin: 0;
-  background-color: var(--azul-biblioteca);
+/* Comentario de prueba */
+.containerGeneral{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,113 +156,5 @@ button[type="button"]:hover {
     text-align: center;
   }
 
-  .logo {
-    width: 50px;
-  }
-
-  input {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 13px;
-  }
-}
-*/
-/* ===================== Teléfonos pequeños 425px ===================== */
-/*
-@media (max-width: 425px) {
-  .tituloPrincipal {
-    font-size: 20px;
-  }
-
-  input {
-    font-size: 13px;
-    padding: 10px;
-  }
-
-  button {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .logo {
-    width: 40px;
-  }
-}*/
-
-/* ===================== Laptop: 769px a 1024px ===================== */
-/*
-@media (min-width: 769px) and (max-width: 1024px) {
-  .containerGeneral {
-    width: 60%;
-    padding: 40px;
-  }
-
-  .tituloPrincipal {
-    font-size: 28px;
-  }
-
-  input {
-    font-size: 15px;
-  }
-
-  button {
-    font-size: 14px;
-  }
-
-  .logo {
-    width: 60px;
-  }
-}*/
-
-/* ===================== Escritorio: 1025px a 1440px ===================== */
-/*
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .containerGeneral {
-    width: 450px;
-    padding: 50px;
-  }
-
-  .tituloPrincipal {
-    font-size: var(--h1-size);
-  }
-
-  .logo {
-    width: 65px;
-  }
-
-  input {
-    font-size: 16px;
-  }
-
-  button {
-    font-size: 15px;
-  }
-}
-*/
-/* ===================== Pantallas muy grandes: 1441px en adelante ===================== */
-/*
-@media (min-width: 1441px) {
-  .containerGeneral {
-    width: 460px;
-    padding: 60px;
-  }
-
-  .tituloPrincipal {
-    font-size: 36px;
-  }
-
-  .logo {
-    width: 70px;
-  }
-
-  input {
-    font-size: 17px;
-  }
-
-  button {
-    font-size: 16px;
-  }
-}
-*/
+  /* Diana, entregar estilos del logo, título, campos del form(rut, nombre, correo, etc) y botones
+  (Todos los estilos tienen que estár de acuerdo a lo planteado en Figma) */
