@@ -36,36 +36,127 @@
     --regular: 400;
   }
 
-  * {
-    box-sizing: border-box;
-}
+ * {
+  box-sizing: border-box;
+}  
+
 /* Comentario de prueba */
+
 .containerGeneral{
   display: flex;
-  padding: 40px 40px;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  border-radius: 20px;
-  border: 1px solid var(--bordes-1);
-  background: var(--fondo-secundarios);
-  }
+  min-height: 100vh;
+}
 
-  .formulario{
+
+.containerGeneral {
+  background-color: var(--fondo-secundarios);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid var(--bordes-1);
+  width: 100%;
+  max-width: 420px;
   display: flex;
-  padding: 40px 40px;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.containerHijo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 20px;
-  border-radius: 20px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.containerLogin {
+  width: 100%;
+}
+
+.tituloPrincipal {
+  text-align: center;
+  font-size: var(--h1-size);
+  color: var(--h1);
+  font-weight: var(--semi-bold);
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid var(--bordes-1);
+  border-radius: 10px;
+  font-size: var(--parrafo-size);
+  background-color: #ffffff;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: var(--enfasos-en-botones);
+  color: black;
+  font-weight: var(--semi-bold);
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: var(--boton-size);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #e6971e;
+  width: 100%;
+}
+
+button[type="button"] {
+  background-color: transparent;
+  color: var(--h1);
+  font-weight: var(--regular);
+  padding: 12px;
+  border: 1px solid var(--bordes-1);
+  border-radius: 10px;
+  font-size: var(--boton-size);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button[type="button"]:hover {
+  background-color: var(--bordes-1);
+  color: var(--bordes-2);
+  width: 100%;
+}
+*/
+/* ===================== Teléfono / Tablet 768px ===================== */
+/*
+@media (max-width: 768px) {
+  .containerGeneral {
+    width: 90%;
+    padding: 20px;
   }
 
-  .tituloPrincipal{
-    font-family: var(--fuente-base);
-    font-size: var(--h1-size);
-    font-weight: var(--semi-bold);
-    color: var(--h1);
+  .containerHijo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tituloPrincipal {
+    font-size: 24px;
     text-align: center;
   }
+
+  /* Diana, entregar estilos del logo, título, campos del form(rut, nombre, correo, etc) y botones
+  (Todos los estilos tienen que estár de acuerdo a lo planteado en Figma) */
