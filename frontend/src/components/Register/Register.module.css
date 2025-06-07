@@ -38,9 +38,8 @@
 
  * {
   box-sizing: border-box;
-}  
 
-/* Comentario de prueba */
+}  
 
 .containerGeneral{
   display: flex;
@@ -139,24 +138,7 @@ button[type="button"]:hover {
   color: var(--bordes-2);
   width: 100%;
 }
-*/
-/* ===================== Teléfono / Tablet 768px ===================== */
-/*
-@media (max-width: 768px) {
-  .containerGeneral {
-    width: 90%;
-    padding: 20px;
-  }
 
-  .containerHijo {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tituloPrincipal {
-    font-size: 24px;
-    text-align: center;
-  }
 
   /* Diana, entregar estilos del logo, título, campos del form(rut, nombre, correo, etc) y botones
   (Todos los estilos tienen que estár de acuerdo a lo planteado en Figma) */
