@@ -8,7 +8,7 @@ const Register = () => {
   const [correo, setCorreo] = useState('');
   const [contraseña, setContraseña] = useState('');
   const [confirmarContraseña, setConfirmarContraseña] = useState('');
-
+  
   const navigate = useNavigate();
 
   const handleRedirectLogin = () => {
@@ -35,13 +35,15 @@ const Register = () => {
         correo,
         contraseña,
         confirmarContraseña,
+      }, {
+        withCredentials: true
       });
-
+    
       alert('Usuario registrado exitosamente');
       navigate('/RegisterExitoso');
     } catch (error) {
       alert(error.response?.data?.message || 'Error en el registro');
-    }
+    }    
   };
 
   return (

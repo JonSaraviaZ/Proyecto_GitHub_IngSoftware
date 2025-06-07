@@ -39,7 +39,7 @@
   * {
     box-sizing: border-box;
 }
-
+/* Comentario de prueba */
 .containerGeneral{
   display: flex;
   padding: 40px 40px;
@@ -69,6 +69,3 @@
     color: var(--h1);
     text-align: center;
   }
-
-  /* Diana, entregar estilos del logo, título, campos del form(rut, nombre, correo, etc) y botones
-  (Todos los estilos tienen que estár de acuerdo a lo planteado en Figma) */
