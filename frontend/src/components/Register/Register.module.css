@@ -35,11 +35,10 @@
     --medium: 500;
     --regular: 400;
   }
-/*
+
  * {
   box-sizing: border-box;
-}
-/* Comentario de prueba */
+} 
 .containerGeneral{
   display: flex;
   justify-content: center;
