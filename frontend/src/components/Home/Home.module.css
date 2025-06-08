@@ -156,7 +156,7 @@
   .cuerpoContainer {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 0px;
     gap: 20px;
   }
 
