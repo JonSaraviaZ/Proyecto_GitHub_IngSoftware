@@ -4,7 +4,7 @@ const { register, loginUsuario } = require('../controllers/authControllers');
 
 const router = express.Router();
 
-router.post('/registro', register); // Cambiado para coincidir con el frontend
-router.post('/login', loginUsuario);
+router.post('/registro', register);// Endpoint para registro de usuario
+router.post('/login', loginUsuario);// Endpoint para login de usuario
 
 module.exports = router;
